@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Group Assignment</title>
+<script>
+function checkSession(){
+	const username=localStorage.getItem('username');
+	if(!username){
+		window.location.href="Login.html";
+	}
+	else{
+		document.getElementById('welcomeMessage').innerText='welcome,${username}!';
+	}
+}
+</script>
+</head>
+<body onload="checkSession()">
+<h2 id="welcomeMessage"></h2>
+<form action="Logout" method="post">
+<input type="submit" name="submit" value="Logout">
+</form>
+</body>
+</html>
